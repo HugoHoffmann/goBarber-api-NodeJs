@@ -1,0 +1,11 @@
+{
+  "name": "goBarber-api-NodeJs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/HugoHoffmann/goBarber-api-NodeJs.git",
+  "author": "Hugo Hoffmann <hugohoffmann04@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
