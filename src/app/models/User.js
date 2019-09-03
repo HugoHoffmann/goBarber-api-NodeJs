@@ -4,11 +4,11 @@ class User extends Model{
     static init(sequelize){
         super.init(
             {
-            name: Sequelize.STRING,
-            email: Sequelize.STRING,
-            password: Sequelize.VIRTUAL,
-            password_hash: Sequelize.STRING,
-            provider: Sequelize.BOOLEAN,
+                name: Sequelize.STRING,
+                email: Sequelize.STRING,
+                password: Sequelize.VIRTUAL,
+                password_hash: Sequelize.STRING,
+                provider: Sequelize.BOOLEAN,
             },
             {
                 sequelize,
@@ -19,6 +19,9 @@ class User extends Model{
                 user.password_hash = await bcrypt.hash(user.password, 8);
             }
         })
+    }
+    static associate(models){
+        this.belongsTo(models.File, {  foreignKey: 'avatar_id' })
     }   
     checkPassword(password){
         return bcrypt.compare(password, this.password_hash);
