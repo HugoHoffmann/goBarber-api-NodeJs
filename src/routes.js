@@ -7,6 +7,7 @@ import FileController from './app/controllers/FileController';
 import ProviderController from './app/controllers/ProviderController';
 import AppointmentsController from './app/controllers/AppointmentsController';
 import ScheduleController from './app/controllers/ScheduleController';
+import NotificationController from './app/controllers/NotificationController';
 import authMidleware from './app/midlewares/auth';
 
 const routes = new Router();
@@ -25,5 +26,7 @@ routes.get('/appointments', AppointmentsController.index);
 routes.post('/appointments', AppointmentsController.store);
 
 routes.get('/schedule', ScheduleController.index);
+
+routes.get('/notifications', NotificationController.index);
 
 export default routes;
