@@ -137,7 +137,6 @@ class AppointmentsController{
                     { locale: pt }  
                 ),
             }
-
         });
 
         return res.json(appointment);
