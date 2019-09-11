@@ -21,8 +21,13 @@ class Queue{
         });
     }
     add(queue, job){
-        return this.queues;
-        // 7.15
+        return this.queues[queue].bee.createJob(job).save();
+    }
+    processQueue(){
+        jobs.forEach(job => {
+            const { bee, handle } = this.queues[job.key];
+            bee.process(handle);
+        })
     }
 }
 
