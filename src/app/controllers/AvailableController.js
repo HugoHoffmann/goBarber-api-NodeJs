@@ -1,7 +1,6 @@
-import { startOfDay, endOfDay, setHours, setMinutes, setSeconds, isAfter } from 'date-fns';
+import { startOfDay, endOfDay, setHours, setMinutes, setSeconds, isAfter, format } from 'date-fns';
 import { Op } from 'sequelize';
 import Appointments from '../models/Appointments';
-import { format } from 'sequelize/types/lib/utils';
 class AvailableController{
     async index(req, res){
         const { date } = req.query;
